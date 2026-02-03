@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebMaze</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Import Three.js from a CDN -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="controls">
+        <label class="toggle-switch">
+            <input type="checkbox" id="perspective-toggle">
+            <span class="slider"></span>
+            <span class="label-text">First Person</span>
+        </label>
+        <label class="toggle-switch" style="margin-left: 10px;">
+            <input type="checkbox" id="hint-toggle">
+            <span class="slider"></span>
+            <span class="label-text">Hint</span>
+        </label>
+        <div class="zoom-controls">
+            <button id="zoom-in" class="control-btn" title="Zoom In">+</button>
+            <button id="zoom-out" class="control-btn" title="Zoom Out">-</button>
+        </div>
+    </div>
+    <div id="game-container">
+        <!-- WebGL Canvas will be injected here -->
+        <div id="loading">Generating Maze...</div>
+    </div>
+    <div id="instructions">
+        Use Arrow Keys or WASD to move.
+    </div>
+    <script type="module" src="src/main.js"></script>
+</body>
+
+</html>
